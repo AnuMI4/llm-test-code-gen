@@ -1,0 +1,13 @@
+﻿Test case ID,Description,Steps,Expected Result
+1,Verify First name field is editable,1. Enter text into input field,User can see entered text on input field
+2,Verify Last Name field is editable,1. Enter text into input field,User can see entered text on input field
+3,Verify Username field is editable,1. Enter text into input field,User can see entered text on input field
+4,Verify Password field is editable,1. Enter text into input field,User can see masked text on input field
+5,"Verify user can register successfully after entering correct data on first name, last name, username and password field","1. Enter correct data on first, last, username, and password field
+2. Click Register button","User should see a success message ""Registration successful"""
+6,Verify user cannot register if any of the fields is left blank,"1. Leave first name field blank
+2. Enter text on other input values
+3. Click Register button","The following error message under first name field should be shown ""First Name is required"""
+7,Verify user cannot register if invalid data like special characters are added on first name field,"1. Enter invalid value like a special character '#' on first name field
+2. Enter valid inputs on other fields
+3. Click Register button ","The following error message under first name field should be shown ""Please enter valid First name"""

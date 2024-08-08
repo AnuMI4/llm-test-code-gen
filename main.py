@@ -5,6 +5,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from codellama_generator import generate_test_case
 from create_test_file import create_file_with_content
+from zero_shot_prompts import html_testing_prompts
+from few_shot_prompts import html_testing_prompts_few_shot
 
 # Fetch url of the webpage
 with open('config.json', 'r') as f:
@@ -25,12 +27,15 @@ driver.quit()
 # Print the extracted links
 print(link_list)
 
+# Convert the list to a string representation suitable for the prompt
+link_list_str = ", ".join([f'"{link}"' for link in link_list])
+
 # Generate a test file under test folder for testing these links
-prompt = f'Write test function in python to test the following array of links: {link_list} with assertion of response 200. Write different function with no parameters for each given link. Write code without explanation'
-generated_code = generate_test_case(f'You are an expert programmer that writes simple, concise code. {prompt}')
+prompt = html_testing_prompts_few_shot["Link"].format(link_list=link_list_str)
+generated_code = generate_test_case(prompt)
 
 directory = "tests"
-filename = "test_4.py"
+filename = "test_6.py"
 content = generated_code
 
 create_file_with_content(directory, filename, content)

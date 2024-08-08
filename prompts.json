@@ -1,4 +1,0 @@
-{
-    "link": "Write test function in python to test this link: {link}. Add assertion for the response to be 200.",
-    "input_field": "Write a test function in Python using Selenium to test this input field: {input_element}"
-}
