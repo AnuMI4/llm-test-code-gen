@@ -7,5 +7,5 @@ def setup (url):
     chrome_options.add_argument("--headless")  # Run in headless mode
     driver = webdriver.Chrome(options=chrome_options)
     driver.get(url)
-    time.sleep(1)
+    time.sleep(2)
     return driver

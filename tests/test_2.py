@@ -1,16 +1,12 @@
-
-import re
-import requests
-from requests import HTTPError
-
-def test_links():
-    links = ['http://www.cwa.mdx.ac.uk/spikeLearn/spikeLearn.html', 'https://www.humanbrainproject.eu/', 'http://www.ics.uci.edu/~mlearn/MLRepository.html', 'http://www.cwa.mdx.ac.uk/chris/chrisroot.html']
-    for link in links:
-        try:
-            r = requests.get(link)
-            assert re.match(r"^http(s)?://", link), "Invalid protocol"
-            assert re.match(r"^\w+(\.\w+)+$", link), "Invalid domain"
-            assert re.match(r"^/.*$", link), "Invalid path"
-            assert r.status_code == 200, "Invalid response"
-        except HTTPError:
-            print("Failed to connect")
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+def test_last_name():
+    driver = webdriver.Chrome()
+    driver.get("http://localhost:3000/register")
+    time.sleep(2)
+    input_field = driver.find_element(By.NAME, 'lastName')
+    input_field.send_keys("John Doe")
+    time.sleep(2)
+    assert "John Doe" in input_field.get_attribute('value')
+    driver.quit()

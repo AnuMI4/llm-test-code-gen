@@ -1,0 +1,3 @@
+Test case ID,Description,Steps,Expected Result
+1,Verify Last Name field is editable,1. Enter text into input field,User can see entered text on input field
+2,Verify First Name field is editable,1. Enter text into input field,User can see entered text on input field

@@ -6,9 +6,11 @@ def load_test_cases(csv_file_path):
     with open(csv_file_path, mode='r', encoding='utf-8-sig') as file:
         reader = csv.DictReader(file)
         for row in reader:
-            test_case_id = row["Test case ID"]
-            description = row["Description"]
-            steps = row["Steps"]
-            expected_result = row["Expected Result"]
-            test_cases.append(f"ID: {test_case_id}, Description: {description}, Steps: {steps}, Expected Result: {expected_result}")
+            test_case = {
+                "ID": row["Test case ID"],
+                "Description": row["Description"],
+                "Steps": row["Steps"],
+                "Expected Result": row["Expected Result"]
+            }
+            test_cases.append(test_case)
     return test_cases

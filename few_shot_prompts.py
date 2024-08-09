@@ -67,16 +67,11 @@ write code without explanation
 # Example 1
 ### Input:
 URL: https://exampleURL.com
-Elements: ["https://example1.com", "<selenium.webdriver.remote.webelement.WebElement (session="143a2d967232709277f1043e871ea30e", element="f.49B1C57617606F7D7D9C0AEF661E30AD.d.775EE8401E9E394C91B85C8AB669B332.e.3")>"]
+Elements: ["<selenium.webdriver.remote.webelement.WebElement (session="143a2d967232709277f1043e871ea30e", element="f.49B1C57617606F7D7D9C0AEF661E30AD.d.775EE8401E9E394C91B85C8AB669B332.e.3")>"]
 
 ### Output:
-import requests
 from faker import Faker
 from selenium import webdriver
-
-def test_link_1():
-    response = requests.get("https://example1.com")
-    assert response.status_code == 200
 
 def test_input_1():
     driver = webdriver.Chrome()
@@ -90,20 +85,11 @@ def test_input_1():
 # Example 2
 ### Input:
 URL: https://exampleURL.com
-Elements: ["https://example1.com", "https://example2.com", "<selenium.webdriver.remote.webelement.WebElement (session="143a2d967232709277f1043e871ea30e", element="f.49B1C57617606F7D7D9C0AEF661E30AD.d.775EE8401E9E394C91B85C8AB669B332.e.3")>, "<selenium.webdriver.remote.webelement.WebElement (session="143a2d967232709277f1043e871ea30e", element="f.49B1C57617606F7D7D9C0AEF661E30AD.d.775EE8401E9E394C91B85C8AB669B332.e.5")>"]
+Elements: ["<selenium.webdriver.remote.webelement.WebElement (session="143a2d967232709277f1043e871ea30e", element="f.49B1C57617606F7D7D9C0AEF661E30AD.d.775EE8401E9E394C91B85C8AB669B332.e.3")>, "<selenium.webdriver.remote.webelement.WebElement (session="143a2d967232709277f1043e871ea30e", element="f.49B1C57617606F7D7D9C0AEF661E30AD.d.775EE8401E9E394C91B85C8AB669B332.e.5")>"]
 
 ### Output:
-import requests
 from faker import Faker
 from selenium import webdriver
-
-def test_link_1():
-    response = requests.get("https://example1.com")
-    assert response.status_code == 200
-
-def test_link_2():
-    response = requests.get("https://example2.com")
-    assert response.status_code == 200
 
 def test_input_1():
     driver = webdriver.Chrome()
