@@ -9,18 +9,16 @@ html_testing_prompts = {
     Write test in python to test the following input elements in register page: {input_field_list}.
     If input field is first or last name field, use faker package to generate first or last name and enter it into input field.
     If input field is a username field, use faker package to generate first or last name and enter it into input field.""",
-
+    
     "generate_code": """
-You will write test code in Python.
-Here is the url of the page to test: {url}.
-Here is the element: {element}.
-And here is the test case: {test_case}.
-These are the test steps: {test_steps}.
-And this is the Expected Result: {expected_result}.
+You will write test code in Python for the test cases provided to you.
+Here is the URL of the page to test: {url}.
+For each test case, here is the corresponding element html, test case description, test steps, and expected result:
+{test_cases_info}
 Write code using Selenium.
-Write this test as a function without parameters so it is runnable.
-Use Chromedriver but no need to provide path to chromedriver.
+Write each test as a function that corresponds to each test case. The function should have no parameters. The function does not need to be called.
+Use Chromedriver but no need to provide path to Chromedriver.
 Write code without explanation.
-This code will be written to a directory that is configured as directory for running pytest tests so no need to write main method.
+Don't write a main method.
 """
 }

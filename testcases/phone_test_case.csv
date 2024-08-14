@@ -1,0 +1,2 @@
+﻿Test case ID,Description,Steps,Expected Result
+1,Verify Phone field is editable,1. Enter numbers into Phone field,User can see the entered number on the phone input field

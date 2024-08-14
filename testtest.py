@@ -14,8 +14,8 @@ def check_similarity(text1, text2):
     return similarity
 
 # Example texts
-text1 = "the Last Name field"
-text2 = 'Last Name lastName   text '
+text1 = "Last Name field"
+text2 = 'links link'
 
 # Check similarity
 similarity_score = check_similarity(text1, text2)

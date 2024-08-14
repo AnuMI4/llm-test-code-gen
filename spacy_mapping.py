@@ -58,10 +58,19 @@ def match_test_case_to_element_spacy(test_case_description, elements, driver):
     doc1 = nlp(ext_keyword_element_text)
 
     for element in elements:
-        print(element.get_attribute('outerHTML'))
-        # Get element text with label
-        element_text = get_element_text_with_label(driver, element)
-        print(f"Element Text with Label: {element_text}")
+        element_text = ""
+
+        # Check if the element is an input field
+        if element.tag_name == "input":
+            # Get element text with label (from the helper function)
+            element_text = get_element_text_with_label(driver, element)
+        
+        # Check if the element is a link (anchor tag)
+        elif element.tag_name == "a":
+            # Get the href attribute of the link
+            element_text = 'links link'
+        
+        print(f"Element Text: {element_text}")
 
         # Process the element attributes with spaCy
         doc2 = nlp(element_text)
@@ -75,6 +84,7 @@ def match_test_case_to_element_spacy(test_case_description, elements, driver):
             best_match = element
 
     return best_match, highest_similarity
+
 
 def calc_sim(driver, elements_list, test_cases):
     # Extract input elements from the web page

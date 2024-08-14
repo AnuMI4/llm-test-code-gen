@@ -1,0 +1,2 @@
+﻿Test case ID,Description,Steps,Expected Result
+1,Verify that clicking on the link 'http://jasonwatmore.com' will redirect browser to the given link,1. Click on the link 'http://jasonwatmore.com',Browser url should be 'http://jasonwatmore.com'
