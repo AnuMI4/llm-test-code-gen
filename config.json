@@ -1,7 +1,8 @@
 {
     "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
     "regPage": "http://localhost:3000/register",
+    "loginPage": "http://localhost:3000/login",
     "page": "https://cwa.mdx.ac.uk/cst3170/cst3170.html",
     "page2": "https://cwa.mdx.ac.uk/chris/theses.html",
-    "demoRegForm": "https://demo.wpeverest.com/user-registration/guest-registration-form/"
+    "demoRegForm": "https://demo.wpeverest.com/user-registration/social-registration-form/"
 }

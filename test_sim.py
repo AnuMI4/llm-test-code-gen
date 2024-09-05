@@ -14,10 +14,10 @@ def check_similarity(text1, text2):
     return similarity
 
 # Example texts
-text1 = "Last Name field"
-text2 = 'links link'
+text1 = "first name field".lower()
+text2 = 'First Name firstName   text '.lower()
 
 # Check similarity
 similarity_score = check_similarity(text1, text2)
 
-print(f"Similarity Score: {similarity_score:.4f}")
+# print(f"Similarity Score: {similarity_score:.4f}")

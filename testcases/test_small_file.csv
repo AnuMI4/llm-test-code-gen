@@ -1,5 +1,5 @@
 Test case ID,Description,Steps,Expected Result
-1,Verify First Name field is editable,1. Enter text into input field,User can see entered text on input field
-2,Verify Last Name field is editable,1. Enter text into input field,User can see entered text on input field
+1,Verify First Name field is editable,1. Enter valid text on first name field,User can see entered text on first name field
+2,Verify Last Name field is editable,1. Enter valid text on last name field,User can see entered text on last name field
 3,Verify that all links are working,1. Click on all the links one by one,"1. Response code should be 200
 2. Browser url should be correct"

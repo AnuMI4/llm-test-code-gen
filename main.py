@@ -1,41 +1,47 @@
-import json
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from codellama_generator import generate_test_case
 from create_test_file import create_file_with_content
+from setup import setup
+from load_json_file import load_json_file
 from zero_shot_prompts import html_testing_prompts
-from few_shot_prompts import html_testing_prompts_few_shot
+from csv_reader import load_test_cases
+from spacy_mapping import calc_sim
+from format_test_cases import format_test_cases
+
+# Load the test cases
+csv_file_path = './testcases/register_cases.csv'
+test_cases_list = load_test_cases(csv_file_path)
+# print(test_cases_list)
+
+# url of web page to test
+url = load_json_file('regPage')
 
 # Fetch url of the webpage
-with open('config.json', 'r') as f:
-    config = json.load(f)
-url = config['page2']
+driver = setup(url)
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")  # Run in headless mode
-driver = webdriver.Chrome(options=chrome_options)
-driver.get(url)
-
-# Extract all links from the page
+# Extract the following elements in page: Link, Input fields, buttons
 links = driver.find_elements(By.TAG_NAME, "a")
-link_list = [link.get_attribute("href") for link in links]
+input_elements = driver.find_elements(By.TAG_NAME, "input")
+button_elements = driver.find_elements(By.TAG_NAME, "button")
 
-driver.quit()
+combined_list = links + input_elements + button_elements
 
-# Print the extracted links
-print(link_list)
+mappings = calc_sim(driver, combined_list, test_cases_list)
+# print(f'this is mapping{mappings}')
 
-# Convert the list to a string representation suitable for the prompt
-link_list_str = ", ".join([f'"{link}"' for link in link_list])
+list_elements = [item['element_html'] for sublist in mappings.values() for item in sublist]
 
-# Generate a test file under test folder for testing these links
-prompt = html_testing_prompts_few_shot["Link"].format(link_list=link_list_str)
+test_cases_info = format_test_cases(test_cases_list, list_elements)
+print(test_cases_info)
+
+prompt = html_testing_prompts["generate_code"].format(url=url, test_cases_info=test_cases_info)
+print('PROMPT'+prompt)
 generated_code = generate_test_case(prompt)
 
 directory = "tests"
-filename = "test_6.py"
+filename = "test_register_1.py"
 content = generated_code
 
 create_file_with_content(directory, filename, content)
+
+driver.quit()

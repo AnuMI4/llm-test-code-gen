@@ -1,0 +1,11 @@
+﻿Test case ID,Description,Steps,Expected Result
+1,"Verify user can register successfully after entering correct data on first name, last name, username and password field","1. Enter valid data on first name field
+2. Enter valid data on last name field
+3. Enter valid data on username field
+4. Enter valid data on password field
+5. Click on Register button","User should see a success message ""Registration successful"""
+2,Verify user cannot register successfully after entering incorrect data on first name,"1. Enter invalid data on first name field like special characters
+2. Enter valid data on last name field
+3. Enter valid data on username field
+4. Enter valid data on password field
+5. Click on Register button","User should see an error message ""Please enter valid First Name"""

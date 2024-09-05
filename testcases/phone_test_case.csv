@@ -1,2 +1,3 @@
 ﻿Test case ID,Description,Steps,Expected Result
 1,Verify Phone field is editable,1. Enter numbers into Phone field,User can see the entered number on the phone input field
+2,Verify Error if an incorrect phone number format is entered,1. Enter wrong format into Phone field,"Error should be shown ""Please provide a valid value for Phone."""

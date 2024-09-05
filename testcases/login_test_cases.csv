@@ -1,0 +1,7 @@
+﻿Test case ID,Description,Steps,Expected Result
+1,Verify user can login successfully after entering correct username and password,"1. Enter valid username ""john"" on username field
+2. Enter valid password ""1234"" on password field
+3. Click on Login button","User should see a success message ""You're logged in"""
+2,Verify user cannot login successfully with incorrect username and password,"1. Enter valid username ""john"" on username field
+2. Enter valid password ""1234"" on password field
+3. Click on Login button","User should see an error message ""Username or password is incorrect"""
