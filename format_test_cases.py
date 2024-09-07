@@ -1,6 +1,6 @@
-# Convert test cases data to test_cases_info
 def format_test_cases(test_cases, elements):
     test_cases_info = ""
+    element_index = 0
 
     for index, test_case in enumerate(test_cases):
         description = test_case.get("Description", "N/A")
@@ -16,10 +16,14 @@ def format_test_cases(test_cases, elements):
 
         # Loop through each step and match with elements
         for step_index, step in enumerate(steps):
-            element = elements[step_index] if step_index < num_elements else "N/A"
+            if element_index < num_elements:
+                element = elements[element_index]
+            else:
+                element = "N/A"  # Handle case where there are more steps than elements
             test_cases_info += f"Test Case {index + 1}:\n"
             test_cases_info += f"Step: {step}\n"
             test_cases_info += f"Element: {element}\n\n"
+            element_index += 1
         
         # Add description and expected result after listing all steps
         test_cases_info += f"Test Case Description: {description}\n"
