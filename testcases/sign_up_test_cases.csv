@@ -1,0 +1,8 @@
+﻿Test case ID,Description,Steps,Expected Result
+1,Verify user is not able to sign up with invalid phone number,"1. Enter valid data on the First Name field
+2. Enter valid data on the Last Name field
+3. Enter valid data on the Email field
+4. Enter invalid data on the  Phone Number field e.g. less than 10 numbers
+5. Enter valid data on the Password field
+6. Enter valid data on the Confirm Password field
+7. Click the Sign Up button","Error should be shown ""Please enter a valid phone number, example: 012345678901"""
