@@ -9,3 +9,4 @@
 3. Enter valid data on username field
 4. Enter valid data on password field
 5. Click on Register button","User should see an error message ""Please enter valid First Name"""
+3,"Verify when the Cancel link is clicked, user is redirected to the login page",1. Click on the Cancel link,User is redirected to /login page

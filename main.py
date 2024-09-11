@@ -3,18 +3,20 @@ from codellama_generator import generate_test_case
 from create_test_file import create_file_with_content
 from setup import setup
 from load_json_file import load_json_file
-from zero_shot_prompts import html_testing_prompts
+from prompts import html_testing_prompts
 from csv_reader import load_test_cases
 from spacy_mapping import calc_sim
 from format_test_cases import format_test_cases
 
 # Load the test cases
-csv_file_path = './testcases/register_cases.csv'
+csv_file_path = './testcases/login_test_cases.csv'
 test_cases_list = load_test_cases(csv_file_path)
 # print(test_cases_list)
 
 # url of web page to test
-url = load_json_file('regPage')
+# direct url can also be provided here instead of using load_json_file(url)
+# url = http://localhost:3000/register
+url = load_json_file('loginPage')
 
 # Fetch url of the webpage
 driver = setup(url)

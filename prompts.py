@@ -45,6 +45,7 @@ Instructions:
 - For elements without provided locators (such as success or error messages), use `By.XPATH` with a syntax similar to `"//*[contains(text(), 'desired text')]"`.
 - Write code only. Don't write any explanation.
 - Every function should have driver.quit().
+- Use waits where appropirate e.g. to wait for page to load or element to be visible. 
 
 Below is a template to help you complete the code by filling in the masked parts:
 

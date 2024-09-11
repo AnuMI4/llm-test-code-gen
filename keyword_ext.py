@@ -29,5 +29,5 @@ def ext_noun(text):
     # Return the highest priority noun phrase, or the first one if priorities are equal
     return noun_phrases[0][0] if noun_phrases else None
 
-# Test the function
-# print(ext_noun('5.  Click on Register button'))
+
+# print(ext_noun('1. Click on the Cancel link'))
