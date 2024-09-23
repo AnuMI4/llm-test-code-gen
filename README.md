@@ -15,8 +15,13 @@ Pre-requisites:
 
    
 3) On main.py file, set the following variables:
-   a) csv_file_path - this is the path to your test cases csv file, should contain test cases for the webpage to test
-   b) url - this is the url of the webpage you want to test
-   c) filename - this is the file generated with tests for the given url and test cases. It will be under the 'tests' directory.
    
-4) Make sure to configure Pytest on tests directory so generated tests on file can be executed
+   a) csv_file_path - this is the path to your test cases csv file, should contain test cases for the webpage to test
+   
+   b) url - this is the url of the webpage you want to test
+
+   c) prompt on line 39, to generate code with zero-shot prompt use ```generate_code``` in ```html_testing_prompts```, and to generate code with few-shot prompt use ```generate_code_with_example```
+   
+   d) filename - this is the file generated with tests for the given url and test cases. It will be under the 'tests' directory.
+   
+5) Make sure to configure Pytest on tests directory so generated tests on file can be executed
