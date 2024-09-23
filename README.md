@@ -8,6 +8,7 @@ Pre-requisites:
 - Have Python extension installed
 
 1) Install all the requirements using this command:
+
    Note: create a new env using venv (```python -m venv <env_name>```) so all dependencies get installed in the created env.
    
    ```pip install -r requirements.txt```
