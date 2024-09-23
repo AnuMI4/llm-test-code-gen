@@ -36,7 +36,7 @@ list_elements = [item['element_html'] for sublist in mappings.values() for item 
 test_cases_info = format_test_cases(test_cases_list, list_elements)
 print(test_cases_info)
 
-prompt = html_testing_prompts["generate_code"].format(url=url, test_cases_info=test_cases_info)
+prompt = html_testing_prompts["generate_code_with_example"].format(url=url, test_cases_info=test_cases_info)
 print('PROMPT'+prompt)
 generated_code = generate_test_case(prompt)
 
